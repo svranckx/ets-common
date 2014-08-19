@@ -13,9 +13,9 @@ An ETS project refers to the common POM as shown below.
       <parent>
         <groupId>org.opengis.cite</groupId>
         <artifactId>ets-common</artifactId>
-        <version>1</version>
+        <version>2</version>
       </parent>
-      <!-- remaining elements -->
+      <!-- remaining POM elements -->
     </project>
 
 Any ETS project generated with the `ets-archetype-testng` archetype will 
