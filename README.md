@@ -13,10 +13,10 @@ An ETS project refers to the common POM as shown below.
       <parent>
         <groupId>org.opengis.cite</groupId>
         <artifactId>ets-common</artifactId>
-        <version>2</version>
+        <version>3</version>
       </parent>
       <!-- remaining POM elements -->
     </project>
 
-Any ETS project generated with the `ets-archetype-testng` archetype will 
-have such a reference. Inherited elements may be overridden if desired.
+Any ETS project generated from the `ets-archetype-testng` archetype will 
+include such a reference. Inherited elements may be overridden if desired.
