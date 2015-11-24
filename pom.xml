@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opengis.cite</groupId>
   <artifactId>ets-common</artifactId>
-  <version>5-SNAPSHOT</version>
+  <version>5</version>
   <packaging>pom</packaging>
 
   <name>Common ETS POM</name>
@@ -24,7 +24,7 @@
     <url>https://github.com/opengeospatial/ets-common</url>
     <connection>scm:git:https://github.com/opengeospatial/ets-common.git</connection>
     <developerConnection>scm:git:git@github.com:opengeospatial/ets-common.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v5</tag>
   </scm>
   <developers>
     <developer>
