@@ -2,9 +2,9 @@
 
 ### Purpose
 This is the top-level POM for test suite projects developed as part of the 
-[OGC Compliance Program](http://cite.opengeospatial.org/). Each test project 
-implements an executable test suite (ETS) that can be run using a test harness 
-such as [TestNG](http://testng.org/).
+[OGC Compliance Program](http://cite.opengeospatial.org/). Each project implements 
+an executable test suite (ETS) that can be run using a test harness such as 
+[TestNG](http://testng.org/).
 
 ### Usage
 An ETS project refers to the common POM as shown below.
