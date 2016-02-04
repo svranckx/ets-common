@@ -13,7 +13,7 @@ An ETS project refers to the common POM as shown below.
       <parent>
         <groupId>org.opengis.cite</groupId>
         <artifactId>ets-common</artifactId>
-        <version>5</version>
+        <version>6</version>
       </parent>
       <!-- remaining POM elements -->
     </project>
