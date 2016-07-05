@@ -1,7 +1,7 @@
 ## Common ETS POM
 
 ### Purpose
-This is the top-level POM for test suite projects developed as part of the 
+This is the top-level POM for the conformance test suites developed as part of the 
 [OGC Compliance Program](http://cite.opengeospatial.org/). Each project implements 
 an executable test suite (ETS) that can be run using a test harness such as 
 [TestNG](http://testng.org/).
@@ -13,7 +13,7 @@ An ETS project refers to the common POM as shown below.
       <parent>
         <groupId>org.opengis.cite</groupId>
         <artifactId>ets-common</artifactId>
-        <version>7-SNAPSHOT</version>
+        <version>7</version>
       </parent>
       <!-- remaining POM elements -->
     </project>

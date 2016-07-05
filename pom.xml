@@ -44,7 +44,7 @@
       <dependency>
         <groupId>org.opengis.cite.teamengine</groupId>
         <artifactId>teamengine-spi</artifactId>
-        <version>4.7-SNAPSHOT</version>
+        <version>4.7</version>
       </dependency>
       <dependency>
         <groupId>org.opengis.cite</groupId>
@@ -116,7 +116,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.0.2</version>
           <configuration>
             <archive>
               <manifest>
@@ -309,7 +309,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.0.0</version>
+            <version>3.0.1</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
