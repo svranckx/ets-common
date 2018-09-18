@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opengis.cite</groupId>
   <artifactId>ets-common</artifactId>
-  <version>10-SNAPSHOT</version>
+  <version>9</version>
   <packaging>pom</packaging>
 
   <name>Common ETS POM</name>
@@ -44,7 +44,7 @@
       <dependency>
         <groupId>org.opengis.cite.teamengine</groupId>
         <artifactId>teamengine-spi</artifactId>
-        <version>4.9</version>
+        <version>5.3</version>
       </dependency>
       <dependency>
         <groupId>org.opengis.cite</groupId>
