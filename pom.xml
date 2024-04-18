@@ -37,22 +37,22 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
-	</properties>
+  </properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.opengis.cite</groupId>
-				<artifactId>teamengine-bom</artifactId>
-				<version>1-SNAPSHOT</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.opengis.cite</groupId>
+                <artifactId>teamengine-bom</artifactId>
+                <version>1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-	<dependencies>
-		<!-- optional dependency of TestNG required to create test stubs -->
+    <dependencies>
+    <!-- optional dependency of TestNG required to create test stubs -->
     <dependency>
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>
@@ -69,7 +69,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.2.5</version>
           <configuration>
-						<!-- Disable TestNG runner (enabled due to compile dependency) -->
+            <!-- Disable TestNG runner (enabled due to compile dependency) -->
             <testNGArtifactName>null:null</testNGArtifactName>
             <junitArtifactName>junit:junit</junitArtifactName>
             <includes>
