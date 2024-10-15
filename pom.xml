@@ -39,49 +39,24 @@
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
   </properties>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.opengis.cite.teamengine</groupId>
-        <artifactId>teamengine-spi</artifactId>
-        <version>5.3</version>
-      </dependency>
-      <dependency>
-        <groupId>org.opengis.cite</groupId>
-        <artifactId>schema-utils</artifactId>
-        <version>1.8</version>
-      </dependency>
-      <dependency>
-        <groupId>com.sun.jersey</groupId>
-        <artifactId>jersey-client</artifactId>
-        <version>1.19</version>
-      </dependency>
-      <dependency>
-        <groupId>joda-time</groupId>
-        <artifactId>joda-time</artifactId>
-        <version>2.9.4</version>
-      </dependency>
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.1</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-        <version>1.10.19</version>
-        <scope>test</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.opengis.cite</groupId>
+                <artifactId>teamengine-bom</artifactId>
+                <version>1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-  <dependencies>
+    <dependencies>
     <!-- optional dependency of TestNG required to create test stubs -->
     <dependency>
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>
-      <version>4.0</version>
+      <version>7.0.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -92,7 +67,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.19.1</version>
+          <version>3.2.5</version>
           <configuration>
             <!-- Disable TestNG runner (enabled due to compile dependency) -->
             <testNGArtifactName>null:null</testNGArtifactName>
@@ -107,16 +82,16 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.6.0</version>
+          <version>3.12.1</version>
           <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
+            <source>17</source>
+            <target>17</target>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
+          <version>3.3.0</version>
           <configuration>
             <archive>
               <manifest>
@@ -133,7 +108,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.6</version>
+          <version>3.7.1</version>
           <configuration>
             <descriptors>
               <descriptor>${basedir}/src/assembly/deps.xml</descriptor>
@@ -153,7 +128,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
-          <version>2.5.3</version>
+          <version>3.0.1</version>
           <configuration>
             <tagNameFormat>@{project.version}</tagNameFormat>
             <autoVersionSubmodules>true</autoVersionSubmodules>
@@ -165,7 +140,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.5.1</version>
+          <version>3.12.1</version>
           <executions>
             <execution>
               <id>site-package</id>
@@ -179,12 +154,12 @@
             <dependency>
               <groupId>org.apache.maven.doxia</groupId>
               <artifactId>doxia-module-xhtml</artifactId>
-              <version>1.7</version>
+              <version>1.12.0</version>
             </dependency>
             <dependency>
               <groupId>org.apache.maven.doxia</groupId>
               <artifactId>doxia-module-markdown</artifactId>
-              <version>1.7</version>
+              <version>1.12.0</version>
             </dependency>
           </dependencies>
           <configuration>
@@ -194,7 +169,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>buildnumber-maven-plugin</artifactId>
-          <version>1.4</version>
+          <version>3.2.0</version>
           <executions>
             <execution>
               <phase>validate</phase>
@@ -236,12 +211,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.9</version>
+        <version>3.5.0</version>
         <reportSets>
           <reportSet>
             <reports>
-              <report>license</report>
-              <report>issue-tracking</report>
+              <report>licenses</report>
+              <report>issue-management</report>
             </reports>
           </reportSet>
         </reportSets>
@@ -249,16 +224,15 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.4</version>
+        <version>3.6.3</version>
         <reportSets>
           <reportSet>
             <id>default</id>
             <configuration>
-              <docfilessubdirs>true</docfilessubdirs>
-              <show>package</show>
-              <links>
-                <link>http://testng.org/javadocs/</link>
-              </links>
+                 <docfilessubdirs>true</docfilessubdirs>
+                 <show>package</show>
+                 <additionalJOption>-Xdoclint:none</additionalJOption>
+                 <detectOfflineLinks>false</detectOfflineLinks>
             </configuration>
             <reports>
               <report>javadoc</report>
@@ -295,7 +269,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
+            <version>3.2.1</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
@@ -309,7 +283,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.0.1</version>
+            <version>3.3.0</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
