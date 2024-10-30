@@ -1,0 +1,30 @@
+pipeline {
+  agent any
+  tools {
+    maven 'mvn396'
+    jdk 'temurin-jdk17'
+  }
+  stages {
+    stage('Initialize') {
+      steps{
+        sh '''
+          echo "PATH = ${PATH}"
+          echo "M2_HOME = ${M2_HOME}"
+        '''
+        sh 'mvn --version'
+      }
+    }
+    stage('Release') {
+      steps{
+        sh 'mvn -Dresume=false -DdryRun=true release:prepare -Psign-artifacts-with-ogc -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${developmentVersion}'
+        sh 'mvn -Dresume=false release:prepare release:perform -Psign-artifacts-with-ogc -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${developmentVersion}'
+      }
+    }
+    stage('Results') {
+      steps{
+        archiveArtifacts artifacts: 'target/*', allowEmptyArchive: true
+        deleteDir()
+      }
+    }
+  }
+}
