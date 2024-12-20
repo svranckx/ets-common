@@ -629,9 +629,6 @@
             <version>3.1.1</version>
           </dependency>
         </dependencies>
-        <configuration>
-          <relativizeDecorationLinks>false</relativizeDecorationLinks>
-        </configuration>
       </plugin>
     </plugins>
 
