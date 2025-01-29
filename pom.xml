@@ -58,6 +58,11 @@
         <version>${teamengine.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.opengis.cite.teamengine</groupId>
+        <artifactId>teamengine-spi-ctl</artifactId>
+        <version>${teamengine.version}</version>
+      </dependency>
+      <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
         <version>1.17.1</version>
@@ -266,6 +271,11 @@
         <groupId>org.opengis.cite</groupId>
         <artifactId>schema-utils</artifactId>
         <version>1.8</version>
+      </dependency>
+      <dependency>
+        <groupId>org.opengis.cite</groupId>
+        <artifactId>cite1-utils</artifactId>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sis.non-free</groupId>
