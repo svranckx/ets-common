@@ -657,6 +657,24 @@
           </dependency>
         </dependencies>
       </plugin>
+      <plugin>
+        <artifactId>maven-remote-resources-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <resourceBundles>
+            <resourceBundle>org.opengis.cite.teamengine:teamengine-resources:${teamengine.version}</resourceBundle>
+          </resourceBundles>
+          <!-- attach resources to test build only -->
+          <attachToMain>false</attachToMain>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>process</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
 
     <resources>
