@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opengis.cite</groupId>
@@ -55,6 +56,11 @@
       <dependency>
         <artifactId>teamengine-spi</artifactId>
         <groupId>org.opengis.cite.teamengine</groupId>
+        <version>${teamengine.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.opengis.cite.teamengine</groupId>
+        <artifactId>teamengine-spi-ctl</artifactId>
         <version>${teamengine.version}</version>
       </dependency>
       <dependency>
@@ -268,6 +274,11 @@
         <version>1.8</version>
       </dependency>
       <dependency>
+        <groupId>org.opengis.cite</groupId>
+        <artifactId>cite1-utils</artifactId>
+        <version>1.1.1</version>
+      </dependency>
+      <dependency>
         <groupId>org.apache.sis.non-free</groupId>
         <artifactId>sis-embedded-data</artifactId>
         <version>1.4</version>
@@ -317,6 +328,22 @@
         <artifactId>junit</artifactId>
         <version>4.13.2</version>
         <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.citygml4j</groupId>
+        <artifactId>citygml4j</artifactId>
+        <version>2.12.2</version>
+      </dependency>
+      <dependency>
+        <groupId>edu.princeton.cup</groupId>
+        <artifactId>java-cup</artifactId>
+        <version>10k</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.opengis.cite.xerces</groupId>
+        <artifactId>xercesImpl-xsd11-shaded</artifactId>
+        <version>2.12-beta-r1667115</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -464,6 +491,24 @@
               <id>report</id>
               <goals>
                 <goal>report</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-remote-resources-plugin</artifactId>
+          <version>3.3.0</version>
+          <configuration>
+            <resourceBundles>
+              <resourceBundle>org.opengis.cite.teamengine:teamengine-resources:${teamengine.version}</resourceBundle>
+            </resourceBundles>
+            <!-- attach resources to test build only -->
+            <attachToMain>false</attachToMain>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>process</goal>
               </goals>
             </execution>
           </executions>
