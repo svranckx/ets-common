@@ -40,7 +40,7 @@
   </developers>
 
   <properties>
-    <teamengine.version>6.0.0-RC2</teamengine.version>
+    <teamengine.version>6.0.0</teamengine.version>
     <jackson.version>2.18.0</jackson.version>
     <jersey.version>3.1.8</jersey.version>
     <jhove.version>1.16.6</jhove.version>
