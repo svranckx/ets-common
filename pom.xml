@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opengis.cite</groupId>
   <artifactId>ets-common</artifactId>
-  <version>16-SNAPSHOT</version>
+  <version>16</version>
   <packaging>pom</packaging>
 
   <name>Common ETS POM</name>
@@ -25,7 +24,7 @@
     <url>https://github.com/opengeospatial/ets-common</url>
     <connection>scm:git:https://github.com/opengeospatial/ets-common.git</connection>
     <developerConnection>scm:git:git@github.com:opengeospatial/ets-common.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>16</tag>
   </scm>
   <developers>
     <developer>
